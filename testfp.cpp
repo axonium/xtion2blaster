@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <iostream>
 #include <fstream>
-#include <time>
 
 #define LEVELS 50
 #define INCREMENT  0.001
