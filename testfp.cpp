@@ -16,23 +16,19 @@ int main(void)
         string ligne;
         fprintf(fp, "%i=%f\n", 25,0.099 );
         fprintf(fp, "%i=%f\n", 24,0.049 );
-        while(getline(fp, ligne))  // tant que l'on peut mettre la ligne dans "contenu"
+        while(std::getline(fp, ligne))  // tant que l'on peut mettre la ligne dans "contenu"
         {
-                cout << ligne << endl;  // on l'affiche
+                std::cout << ligne << std::endl;  // on l'affiche
                 sleep(4);
         }
         fprintf(fp, "%i=%f\n", 25,0.072 );
         fprintf(fp, "%i=%f\n", 24,0.049 );
-        while(getline(fp, ligne))  // tant que l'on peut mettre la ligne dans "contenu"
+        while(std::getline(fp, ligne))  // tant que l'on peut mettre la ligne dans "contenu"
         {
-                cout << ligne << endl;  // on l'affiche
+               std::cout << ligne << std::endl;  // on l'affiche
                 sleep(4);
         }
-}
-   
-   
-  
+}   
    fflush(fp);
-   
    return 0;
 }
