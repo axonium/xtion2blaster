@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <fstream>
+#include <time>
 
 #define LEVELS 50
 #define INCREMENT  0.001
@@ -13,7 +14,7 @@ int main(void)
 {
    FILE *fp;
    //fp = fopen("/dev/pi-blaster", "r+");
-   fp = fopen("/home/pi/piblastout/pi-blaster")
+   fp = fopen("/home/pi/piblastout/pi-blaster" , "r+");
    if(fp)
 {       
        
