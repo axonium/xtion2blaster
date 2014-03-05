@@ -12,8 +12,8 @@ using namespace std;
 int main(void)
 {
    FILE *fp;
-   fp = fopen("/dev/pi-blaster", "r+");
-   
+   //fp = fopen("/dev/pi-blaster", "r+");
+   fp = fopen("/home/pi/piblastout/pi-blaster")
    if(fp)
 {       
        
