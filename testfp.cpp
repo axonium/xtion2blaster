@@ -3,27 +3,31 @@
 #include <stdlib.h>
 #include <iostream>
 #include <fstream>
-#include <System.IOUtils.hpp>
+
+#define LEVELS 50
+#define INCREMENT  0.001
 
 using namespace std;
 
 int main(void)
 {
    FILE *fp;
-   fp = fopen("/home/pi/piblastout/pi-blastert", "r+");
+   fp = fopen("/dev/pi-blaster", "r+");
    
    if(fp)
 {       
-        string ligne;
+       
         fprintf(fp, "%i=%f\n", 25,0.099 );
         fprintf(fp, "%i=%f\n", 24,0.049 );
-        TFile::Copy("/home/pi/piblastout/pi-blastert", "/home/pi/piblastout/out1") 
-        sleep(4) ;
+        sleep(5) ;
         fprintf(fp, "%i=%f\n", 25,0.072 );
-        fprintf(fp, "%i=%f\n", 24,0.049 );
-        TFile::Copy("/home/pi/piblastout/pi-blastert", "/home/pi/piblastout/out2")  
-       
-       
+        fprintf(fp, "%i=%f\n", 24,0.049 ); 
+        sleep(4);
+        for (double p = 0.049; p <0.055 ; p+=INCREMENT ){
+            fprintf(fp, "%i=%f\n", 24,p );
+            sleep(1);
+        }
+     
 }   
    fflush(fp);
    return 0;
